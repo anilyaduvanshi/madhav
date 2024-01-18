@@ -31,10 +31,10 @@ public class FullAPI {
             @PathVariable int number,
             @RequestParam String pathVariable,
             @RequestBody List<String> list,
-            @RequestHeader HttpHeaders headers,
-            HttpServletRequest request,
-            Principal principal,
-            Pageable pageable
+            @RequestHeader HttpHeaders headers
+//            HttpServletRequest request,
+//            Principal principal,
+//            Pageable pageable
     ){
         System.out.println(headers.get("Version"));
         System.out.println(headers.get("Accept-Content"));
