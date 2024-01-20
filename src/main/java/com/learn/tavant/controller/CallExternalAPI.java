@@ -1,5 +1,6 @@
 package com.learn.tavant.controller;
 
+import com.learn.tavant.model.ResponseModel;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -27,6 +28,6 @@ public class CallExternalAPI {
 //        return new ResponseEntity<>(response, HttpStatus.OK);
         URI uri = new URI("https://restcountries.com/v3.1/name/deutschland");
         Object res2 = builder.build().method(HttpMethod.GET).uri(uri).retrieve().bodyToMono(Object.class).block();
-        return new ResponseEntity<>(res2, HttpStatus.valueOf("anil"));
+        return new ResponseEntity<>(new ResponseModel(res2), HttpStatus.valueOf("anil"));
     }
 }
