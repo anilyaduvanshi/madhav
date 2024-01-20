@@ -1,13 +1,11 @@
 package com.learn.tavant.controller;
 
-import jakarta.servlet.http.HttpServletRequest;
+import com.learn.tavant.config.LogMethods;
+import com.learn.tavant.model.ResponseModel;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-
-import java.awt.print.Pageable;
-import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -26,8 +24,9 @@ public class FullAPI {
     */
 
 
-    @GetMapping(path = "/full-api/{number}")
-    public ResponseEntity<Object> getResult(
+    @LogMethods
+    @PostMapping(path = "/full-api/{number}")
+    public ResponseEntity<ResponseModel> getResult(
             @PathVariable int number,
             @RequestParam String pathVariable,
             @RequestBody List<String> list,
@@ -44,10 +43,9 @@ public class FullAPI {
 
 
 
-        //setting response headers
         responseHeaders.add(HttpHeaders.CONTENT_ENCODING, "utf-8");
         responseHeaders.add(HttpHeaders.CONTENT_LANGUAGE, "en");
         responseHeaders.add(HttpHeaders.SERVER, "localhost");
-        return ResponseEntity.ok().headers(responseHeaders).body(number);
+        return new ResponseEntity<>(new ResponseModel(number), responseHeaders, HttpStatus.OK);
     }
 }
