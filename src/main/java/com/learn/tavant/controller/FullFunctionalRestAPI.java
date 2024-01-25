@@ -1,7 +1,7 @@
 package com.learn.tavant.controller;
 
 import com.learn.tavant.config.LogMethods;
-import com.learn.tavant.model.ResponseModel;
+import com.learn.tavant.model.common.ResponseModel;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class FullAPI {
+public class FullFunctionalRestAPI {
 
 
     /*

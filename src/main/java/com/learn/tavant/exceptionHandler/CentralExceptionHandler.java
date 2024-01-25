@@ -1,12 +1,10 @@
 package com.learn.tavant.exceptionHandler;
 
-import com.learn.tavant.model.ResponseModel;
+import com.learn.tavant.model.common.ResponseModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import java.time.Instant;
 
 @ControllerAdvice
 public class CentralExceptionHandler extends ResponseEntityExceptionHandler {

@@ -1,4 +1,4 @@
-package com.learn.tavant.model;
+package com.learn.tavant.model.common;
 
 import org.springframework.http.HttpStatus;
 
