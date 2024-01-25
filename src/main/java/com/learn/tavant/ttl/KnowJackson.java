@@ -2,6 +2,7 @@ package com.learn.tavant.ttl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +23,12 @@ public class KnowJackson {
         map.put("designation", "software engineer");
 
         mapper.writeValue(new File("sample.json"), map);
+        System.out.println("<><><> Running after constructing");
+    }
+
+    @PreDestroy
+    public void preDestroyCheck(){
+        System.out.println("<><><> Running before destructing");
     }
 
 }
