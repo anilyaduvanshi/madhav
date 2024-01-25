@@ -1,7 +1,7 @@
 package com.learn.tavant.controller;
 
 
-import com.learn.tavant.model.ResponseModel;
+import com.learn.tavant.model.common.ResponseModel;
 import com.learn.tavant.service.S3BucketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

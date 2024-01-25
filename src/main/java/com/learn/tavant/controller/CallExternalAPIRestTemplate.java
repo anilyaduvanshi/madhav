@@ -1,23 +1,16 @@
 package com.learn.tavant.controller;
 
-import com.learn.tavant.model.ResponseModel;
+import com.learn.tavant.model.common.ResponseModel;
 import org.springframework.http.*;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.util.MultiValueMapAdapter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.reactive.function.client.WebClient.RequestHeadersSpec;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.function.Consumer;
 
 @RestController
-public class CallExternalAPI {
+public class CallExternalAPIRestTemplate {
 
     WebClient.Builder builder = WebClient.builder();
 
